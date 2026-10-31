@@ -9,6 +9,7 @@ import 'dart:ffi';
 import 'dart:ffi' as ffi;
 import 'dart:io';
 import 'dart:isolate';
+import 'dart:typed_data';
 import 'package:ffi/ffi.dart';
 
 extension ListFirstWhere<T> on Iterable<T> {
@@ -47,7 +48,8 @@ abstract class JSRef {
     void Function(JSRef) cb, [
     Set? cache,
   ]) {
-    if (obj == null) return;
+    // Numeric buffers cannot contain JS references; avoid boxing every element.
+    if (obj == null || obj is TypedData) return;
     if (cache == null) cache = Set();
     if (cache.contains(obj)) return;
     if (obj is List) {

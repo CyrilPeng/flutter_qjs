@@ -6,6 +6,17 @@
  * @LastEditTime: 2020-12-02 11:36:40
 -->
 
+## Unreleased
+
+* Skip typed numeric buffers when recursively retaining and releasing JS
+  references. Promise byte results no longer allocate ordinary lists or scan
+  every byte solely for reference management.
+* Preserve normal list/map traversal, aliases, cycles, callback ownership, and
+  Promise completion behavior. Add regression coverage for byte-buffer views,
+  signed and floating-point buffers, ByteData, and mixed cyclic reference graphs.
+* This fork patch changes no native code, platform build settings, or package
+  version. VeneraNext host measurements are not Android frame-pacing acceptance.
+
 ## 0.3.7
 
 * add timeout and memory limit
