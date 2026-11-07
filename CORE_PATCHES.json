@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "reviewed_on": "2026-11-07",
+  "upstream_repository": "https://github.com/quickjs-ng/quickjs",
+  "upstream_commit": "d07f6b5232dd92ba712fe729bd018aae3a1b328f",
+  "previous_fork_commit": "295f77421eedff356a02e92987181b525970c780",
+  "canonical_bytes": "Git-compatible LF text, preserving all other bytes",
+  "patch_record": "CORE_PATCHES.md",
+  "files": [
+    {
+      "path": "cxx/quickjs-ng/cutils.c",
+      "official_git_blob": "438087d06eb5cbc31a60c244cce6314834da0081",
+      "previous_fork_git_blob": "438087d06eb5cbc31a60c244cce6314834da0081",
+      "previous_sha256": "4f883fbf810458439cd219a6ad97c73fb2c36ea2591b7aae3ea0c0978515231e",
+      "patched_sha256": "4f883fbf810458439cd219a6ad97c73fb2c36ea2591b7aae3ea0c0978515231e",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/cutils.h",
+      "official_git_blob": "4639a6b93b0de59d0ece691d80ecce6df85cf227",
+      "previous_fork_git_blob": "4639a6b93b0de59d0ece691d80ecce6df85cf227",
+      "previous_sha256": "54ad20da0d2aad980985a807dac28ec9fe081f20b5e8d06b1ea80a4ff4dc3738",
+      "patched_sha256": "54ad20da0d2aad980985a807dac28ec9fe081f20b5e8d06b1ea80a4ff4dc3738",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/dirent_compat.h",
+      "official_git_blob": "1d6c4802e13f353ca228729a9b277a29c4b611ab",
+      "previous_fork_git_blob": "1d6c4802e13f353ca228729a9b277a29c4b611ab",
+      "previous_sha256": "1df2a28f2d830c6840c41f19a4aed96ec082e45f7ceb89dc9c497c0ef92699c5",
+      "patched_sha256": "1df2a28f2d830c6840c41f19a4aed96ec082e45f7ceb89dc9c497c0ef92699c5",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/getopt_compat.h",
+      "official_git_blob": "f98ba2739420e11220d0607f91a07ad539de611a",
+      "previous_fork_git_blob": "f98ba2739420e11220d0607f91a07ad539de611a",
+      "previous_sha256": "e3b7f5449f16b226fcc05751304c67ec426df16ff1dc558714630074ddd50b7c",
+      "patched_sha256": "e3b7f5449f16b226fcc05751304c67ec426df16ff1dc558714630074ddd50b7c",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libbf.c",
+      "official_git_blob": "07d27cfa1ed07d9e888b43ee10224c6469f5dabb",
+      "previous_fork_git_blob": "07d27cfa1ed07d9e888b43ee10224c6469f5dabb",
+      "previous_sha256": "04851497efaf4948e9cc720268c1c80d8c85fca999f309c157277f6e7fcf78ff",
+      "patched_sha256": "04851497efaf4948e9cc720268c1c80d8c85fca999f309c157277f6e7fcf78ff",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libbf.h",
+      "official_git_blob": "3586532e88829977e4bdbe8d63f48955087ed346",
+      "previous_fork_git_blob": "3586532e88829977e4bdbe8d63f48955087ed346",
+      "previous_sha256": "4d41b778efb8c4a6ec622cdf77edd0fdd2a5146551e5d387c9c3839930296058",
+      "patched_sha256": "4d41b778efb8c4a6ec622cdf77edd0fdd2a5146551e5d387c9c3839930296058",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libregexp-opcode.h",
+      "official_git_blob": "5c1714ab0cc6e96173581a1500ffb06a1c622b6e",
+      "previous_fork_git_blob": "5c1714ab0cc6e96173581a1500ffb06a1c622b6e",
+      "previous_sha256": "c5ee518885eb6e720537b6df5565ddc2bcaadbda512f3fc072adc96fb24a7648",
+      "patched_sha256": "c5ee518885eb6e720537b6df5565ddc2bcaadbda512f3fc072adc96fb24a7648",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libregexp.c",
+      "official_git_blob": "04c2888a847787cb07446e228d9f35706cf1588e",
+      "previous_fork_git_blob": "04c2888a847787cb07446e228d9f35706cf1588e",
+      "previous_sha256": "5e83716e7e19cb514ece3b8121c1e56be33418dfa7aa4c933b27fcdad9d6dae0",
+      "patched_sha256": "5e83716e7e19cb514ece3b8121c1e56be33418dfa7aa4c933b27fcdad9d6dae0",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libregexp.h",
+      "official_git_blob": "0b8fec52bc99620cc45d58f7261a9ef81b333f3f",
+      "previous_fork_git_blob": "0b8fec52bc99620cc45d58f7261a9ef81b333f3f",
+      "previous_sha256": "1b8a2fd731404c1e0b902dd014a2897a821a7a6dc93f4439f3373d3bc09263e7",
+      "patched_sha256": "1b8a2fd731404c1e0b902dd014a2897a821a7a6dc93f4439f3373d3bc09263e7",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libunicode-table.h",
+      "official_git_blob": "b48a3a7460f9b91d9acf27cc382c45a46715cb24",
+      "previous_fork_git_blob": "b48a3a7460f9b91d9acf27cc382c45a46715cb24",
+      "previous_sha256": "edf404e2092c680b6bc88835db79a5834f688be6b6c5d1c1b91da9ecf29deba9",
+      "patched_sha256": "edf404e2092c680b6bc88835db79a5834f688be6b6c5d1c1b91da9ecf29deba9",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libunicode.c",
+      "official_git_blob": "a621c5235dcd1b82b20e90be08db00e508fbbc8c",
+      "previous_fork_git_blob": "a621c5235dcd1b82b20e90be08db00e508fbbc8c",
+      "previous_sha256": "97eb7dff52a8984e68636b103e0f0238b889931681b8beb9e7b152a5a1633a02",
+      "patched_sha256": "97eb7dff52a8984e68636b103e0f0238b889931681b8beb9e7b152a5a1633a02",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/libunicode.h",
+      "official_git_blob": "8e6f2a01dce284b004d2638380532c978eb295c5",
+      "previous_fork_git_blob": "8e6f2a01dce284b004d2638380532c978eb295c5",
+      "previous_sha256": "70f9f38b1cd10186d22e30d5f604465f4747662701f3310e089e5749060f4d4f",
+      "patched_sha256": "70f9f38b1cd10186d22e30d5f604465f4747662701f3310e089e5749060f4d4f",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/list.h",
+      "official_git_blob": "b8dd716814f541a6de030b099890ca32398b3434",
+      "previous_fork_git_blob": "b8dd716814f541a6de030b099890ca32398b3434",
+      "previous_sha256": "cb6e24e8ee54bccdd66234fe54cd702d1160b9841db2b9b9adeb5003afe301d5",
+      "patched_sha256": "cb6e24e8ee54bccdd66234fe54cd702d1160b9841db2b9b9adeb5003afe301d5",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/quickjs-atom.h",
+      "official_git_blob": "358fe23062d38ddcaabb3d4753973f14face4a74",
+      "previous_fork_git_blob": "358fe23062d38ddcaabb3d4753973f14face4a74",
+      "previous_sha256": "e68614dc55e20dd92511cc294fe072a67a8afc385fdd25ea59d0454fd92672bc",
+      "patched_sha256": "e68614dc55e20dd92511cc294fe072a67a8afc385fdd25ea59d0454fd92672bc",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/quickjs-c-atomics.h",
+      "official_git_blob": "8fc6b720309cd4da980fe2a12126007b45926119",
+      "previous_fork_git_blob": "8fc6b720309cd4da980fe2a12126007b45926119",
+      "previous_sha256": "29883c742a5c512278fce54d19b1b9af949006e1d7dfc9ffa2e0946b184d8c5c",
+      "patched_sha256": "29883c742a5c512278fce54d19b1b9af949006e1d7dfc9ffa2e0946b184d8c5c",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/quickjs-opcode.h",
+      "official_git_blob": "fb5394c58d422c528dde68b6249c9e45d27d9f1a",
+      "previous_fork_git_blob": "fb5394c58d422c528dde68b6249c9e45d27d9f1a",
+      "previous_sha256": "b364428c2f7d3fdcd29876fb10999f9cc12820ef9e29007c0cfb7a84e0373cfb",
+      "patched_sha256": "b364428c2f7d3fdcd29876fb10999f9cc12820ef9e29007c0cfb7a84e0373cfb",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/quickjs.c",
+      "official_git_blob": "1b49d537996912ee8049b1b472d565b31466b1fa",
+      "previous_fork_git_blob": "1b49d537996912ee8049b1b472d565b31466b1fa",
+      "previous_sha256": "a0fefaa19b9cbfb15585e10864f7c8a68872e239a05204a64913c155448cc920",
+      "patched_sha256": "935752a02f6280e76732ee1722379f08d8aa3ff320f0410e6888f27c1b52a14c",
+      "changed": true
+    },
+    {
+      "path": "cxx/quickjs-ng/quickjs.h",
+      "official_git_blob": "5ec3e60e43f7187edbd41adb26b9f6fc6d1d0b09",
+      "previous_fork_git_blob": "5ec3e60e43f7187edbd41adb26b9f6fc6d1d0b09",
+      "previous_sha256": "1e90b63e079ef233c949b6b1f6e4fd6503d9e2321994a1b2fb592d926887c310",
+      "patched_sha256": "1e90b63e079ef233c949b6b1f6e4fd6503d9e2321994a1b2fb592d926887c310",
+      "changed": false
+    },
+    {
+      "path": "cxx/quickjs-ng/VERSION",
+      "official_git_blob": null,
+      "previous_fork_git_blob": "f09a8ae1509b49d08e8986afd30a050313001057",
+      "previous_sha256": "f484e3ed0733fdab4b97713b516a71911bda479db719adca36a183eb273bdc5a",
+      "patched_sha256": "c714e3739395aa6df050be15dcb550ebbc6072b704c617091636094b22d41607",
+      "changed": true
+    }
+  ],
+  "not_applicable": [
+    {
+      "advisory": "GHSA-r6vf-p8wr-4vg9",
+      "reason": "This core uses generic JS_SetPropertyInt64 push, not the later optimized array_len/count path."
+    },
+    {
+      "advisory": "GHSA-3jf7-4qfx-xc2h",
+      "reason": "The reported rope string implementation is absent."
+    }
+  ],
+  "validation": {
+    "native_test": "test/core_safety",
+    "allocator_failures_per_program": 256,
+    "ci": ".github/workflows/core_safety.yml",
+    "platform_scope": "Linux 64/32 bit ASan and UBSan; Windows 64/32 bit ASan. MSVC has no Atomics API; Linux requires it.",
+    "application_acceptance": "Rebuild and run VeneraNext Map/TypedData, Promise, cancellation and lifecycle tests; platform builds remain required."
+  }
+}

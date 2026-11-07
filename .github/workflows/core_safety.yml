@@ -1,0 +1,87 @@
+name: Native core safety
+
+on:
+  push:
+    branches: [master, 'codex/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: core-safety-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    name: Linux ${{ matrix.bits }} bit ASan and UBSan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        bits: [64, 32]
+    steps:
+      - uses: actions/checkout@v7
+      - run: python3 tool/check_core_patches.py
+      - name: Install multilib compilers
+        if: matrix.bits == 32
+        run: |
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 update
+          sudo apt-get -o Acquire::Retries=2 -o Acquire::https::Timeout=20 install -y gcc-multilib g++-multilib
+      - name: Compile patched core and FFI
+        env:
+          CORE_BITS: ${{ matrix.bits }}
+        run: |
+          cmake -S test/core_safety -B build/core-safety -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DCMAKE_C_FLAGS="-m$CORE_BITS" -DCMAKE_CXX_FLAGS="-m$CORE_BITS" \
+            -DQJS_ENABLE_SANITIZERS=ON
+          cmake --build build/core-safety --parallel 2
+      - name: Run bounded regressions and allocation failures
+        env:
+          ASAN_OPTIONS: detect_leaks=1:allocator_may_return_null=1
+          UBSAN_OPTIONS: print_stacktrace=1:halt_on_error=1
+        run: ctest --test-dir build/core-safety --output-on-failure -V
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: core-safety-linux-${{ matrix.bits }}
+          path: build/core-safety/Testing/Temporary/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  windows:
+    name: Windows ${{ matrix.arch }} bit ASan
+    runs-on: windows-2025
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: 64
+            platform: x64
+          - arch: 32
+            platform: Win32
+    steps:
+      - uses: actions/checkout@v7
+      - run: python tool/check_core_patches.py
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.platform == 'Win32' && 'x86' || 'x64' }}
+      - name: Compile patched core and FFI
+        shell: pwsh
+        run: |
+          cmake -S test/core_safety -B build/core-safety -A ${{ matrix.platform }} -DQJS_ENABLE_SANITIZERS=ON
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cmake --build build/core-safety --config RelWithDebInfo --parallel 2
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Run bounded regressions and allocation failures
+        run: ctest --test-dir build/core-safety -C RelWithDebInfo --output-on-failure -V
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: core-safety-windows-${{ matrix.arch }}
+          path: build/core-safety/Testing/Temporary/
+          if-no-files-found: ignore
+          retention-days: 7

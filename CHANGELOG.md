@@ -8,6 +8,16 @@
 
 ## Unreleased
 
+* 回移已核实的 QuickJS-NG 核心安全修复：新数组在 getter／GC 重入前初始化槽位；
+  CallSite 和 Promise／async 的分配失败清理保留正确的所有权；Atomics.store 的
+  缓冲失效路径释放转换结果，TypedArray sort 与 Proxy 检查真实字节分配溢出。
+* ArrayBuffer.transfer 拒绝外部 backing store，清空旧 TypedArray 视图，并在移动
+  缓冲前分配目标元数据；分配失败保留原 backing store。快数组增长限定元素／
+  字节范围。保留 Dart Map／TypedData／dispatch／port API 与 0.3.7 包版本。
+* 增加有界 getter／GC、真实分配失败、外部缓冲、视图转移和 32 位边界原生回归；
+  修复来源与验证范围记录在 CORE_PATCHES.md／JSON，CI 核对完整核心源码摘要。
+  VERSION 改为真实 d07f6b5 基线的本地补丁标识。旧泛型 push 未含后来引入的优化缺陷。
+
 * Skip typed numeric buffers when recursively retaining and releasing JS
   references. Promise byte results no longer allocate ordinary lists or scan
   every byte solely for reference management.
